@@ -39,7 +39,7 @@ copy the resulting dir
 $ cp -r resources/MTGO_Legacy_PTQ_10_11_19_dck_files ~/Library/Application\ Support/Forge/decks/constructed/
 ```
 
-# Command Line Usage
+## Command Line Usage
 
 You can skip running Clojure if you'd prefer.
 
