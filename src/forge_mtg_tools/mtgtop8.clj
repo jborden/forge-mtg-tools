@@ -2,7 +2,8 @@
   (:require [clj-http.client :as client]
             [forge-mtg-tools.converter :as converter]
             [hickory.core :refer [parse as-hickory]]
-            [hickory.select :as s]))
+            [hickory.select :as s]
+            [me.raynes.fs :as fs]))
 
 (def mtgtop8-root "https://mtgtop8.com")
 
@@ -79,3 +80,9 @@
 
 ;; ex:
 ;; (download-files "https://www.mtgtop8.com/event?e=23638&d=363913")
+(defn -main
+  [url & [target-dir]]
+  (let [target-dir (or target-dir "/Users/james/Library/Application Support/Forge/decks/constructed")
+        new-dir (download-files url)]
+    (fs/copy-dir new-dir target-dir)
+    (println "success")))

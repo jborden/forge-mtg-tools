@@ -65,12 +65,12 @@
         dir-base-name (fs/base-name dir)
         new-dir (str parent "/" dir-base-name "_dck_files")]
     (fs/mkdir new-dir)
-    (doall (map #(let [[name ext] (fs/split-ext %)
-                       path (.getParent %)
+    (doall (map #(let [[name _ext] (fs/split-ext %)
                        parsed-deck (mwdeck->dck %)
                        new-filename (str new-dir "/" name ".dck")]
                    (spit new-filename parsed-deck))
-                mwdeck-files))))
+                mwdeck-files))
+    new-dir))
 
 ;; (mwdeck-dir->dck-dir "resources/The_15th_God_of_Legacy_@_Hareruya_(Japan)_09_11_19")
 ;; (mwdeck-dir->dck-dir "resources/MTGO_Legacy_PTQ_10_11_19")

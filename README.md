@@ -16,6 +16,13 @@ copy the resulting dir
 $ cp -r resources/MTGO_Legacy_PTQ_10_11_19_dck_files ~/Library/Application\ Support/Forge/decks/constructed/
 ```
 
+# From the command line
+
+## command line
+```
+lein run -m forge-mtg-tools.mtgtop8 "<url>"
+```
+
 ## License
 
 Copyright © 2019 James Borden
